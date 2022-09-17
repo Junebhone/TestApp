@@ -1,154 +1,87 @@
-// /**
-//  * Sample React Native App
-//  * https://github.com/facebook/react-native
-//  *
-//  * @format
-//  * @flow strict-local
-//  */
+import React from 'react';
+import {SafeAreaView, View, Text, Image} from 'react-native';
 
-// import React from 'react';
-// import type {Node} from 'react';
-// import {
-//   SafeAreaView,
-//   ScrollView,
-//   StatusBar,
-//   StyleSheet,
-//   Text,
-//   useColorScheme,
-//   View,
-// } from 'react-native';
-
-// import {
-//   Colors,
-//   DebugInstructions,
-//   Header,
-//   LearnMoreLinks,
-//   ReloadInstructions,
-// } from 'react-native/Libraries/NewAppScreen';
-
-// /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
-//  * LTI update could not be added via codemod */
-// const Section = ({childern, title}): Node => {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// };
-
-// const App: () => Node = () => {
-//   const isDarkMode = useColorScheme() === 'dark';
-
-//   const backgroundStyle = {
-//     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-//   };
-
-//   return (
-//     <SafeAreaView style={backgroundStyle}>
-//       <StatusBar
-//         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-//         backgroundColor={backgroundStyle.backgroundColor}
-//       />
-//       <ScrollView
-//         contentInsetAdjustmentBehavior="automatic"
-//         style={backgroundStyle}>
-//         <Header />
-//         <View
-//           style={{
-//             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-//           }}>
-//           <Section title="Step One">
-//             Edit <Text style={styles.highlight}>App.js</Text> to change this
-//             screen and then come back to see your edits.
-//           </Section>
-//           <Text>HI</Text>
-//           <Section title="See Your Changes">
-//             <ReloadInstructions />
-//           </Section>
-//           <Section title="Debug">
-//             <DebugInstructions />
-//           </Section>
-//           <Section title="Learn More">
-//             Read the docs to discover what to do next:
-//           </Section>
-//           <LearnMoreLinks />
-//         </View>
-//       </ScrollView>
-//     </SafeAreaView>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   sectionContainer: {
-//     marginTop: 32,
-//     paddingHorizontal: 24,
-//   },
-//   sectionTitle: {
-//     fontSize: 24,
-//     fontWeight: '600',
-//   },
-//   sectionDescription: {
-//     marginTop: 8,
-//     fontSize: 18,
-//     fontWeight: '400',
-//   },
-//   highlight: {
-//     fontWeight: '700',
-//   },
-// });
-
-// export default App;
-
-import React from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
-
-const UselessTextInput = () => {
-  const [text, onChangeText] = React.useState("Useless Text");
-  const [number, onChangeNumber] = React.useState(null);
-
+const App = () => {
   return (
-    <SafeAreaView>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
-        placeholder="useless placeholder"
-        keyboardType="numeric"
-      />
+    <SafeAreaView className="flex-1 bg-[#F3F5FF]">
+      <View className="flex  flex-row justify-between p-[16px]">
+        <View className="flex flex-row">
+          <Image
+            source={require('./images/profile.png')}
+            className="w-10 h-10 mr-3"></Image>
+          <View className="flex flex-col">
+            <Text className="opacity-40 text-[14px]">Welcome Back,</Text>
+            <Text className="font-bold text-[24px]">U Ba</Text>
+          </View>
+        </View>
+        <View className="flex justify-center items-center">
+          <Image
+            source={require('./images/bell.png')}
+            className="w-4 h-4"></Image>
+        </View>
+      </View>
+
+      <View className="mx-4 gap-y-2">
+        <View className="bg-white rounded-md divide-y divide-gray-100">
+          <View className="px-4 py-2 flex flex-col gap-2">
+            <Text className="text-[18px] opacity-30">Total Amount</Text>
+            <Text className="text-[28px] font-bold color-[#47980E]">
+              250,000 MMK
+            </Text>
+          </View>
+          <View className="flex flex-row justify-between px-4 py-2">
+            <View className="flex flex-col gap-2">
+              <Text className="text-[18px] opacity-30">e-Pension</Text>
+              <Text className="text-[20px] font-bold">09421768835</Text>
+            </View>
+            <View className="flex flex-col gap-2">
+              <Text className="text-[18px] opacity-30">MMK</Text>
+              <Text className="text-[20px] font-bold color-[#47980E]">
+                250,000
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View className="flex flex-row gap-x-2">
+          <View className="bg-white p-2 rounded-md flex-1">
+            <View className="flex flex-row justify-start">
+              <View className="bg-gray-100 rounded-full flex justify-center items-center w-12 h-12">
+                <Image
+                  source={require('./images/cashIn.png')}
+                  className=" w-8 h-8"></Image>
+              </View>
+            </View>
+            <View className="flex flex-row justify-end">
+              <Text className="flex justift-end font-bold text-lg">
+                Cash In
+              </Text>
+            </View>
+          </View>
+          <View className="bg-white p-2 rounded-md flex-1">
+            <View className="flex flex-row justify-start">
+              <View className="bg-gray-100 rounded-full flex justify-center items-center w-12 h-12">
+                <Image
+                  source={require('./images/cashIn.png')}
+                  className=" w-8 h-8"></Image>
+              </View>
+            </View>
+            <View className="flex flex-row justify-end">
+              <Text className="flex justift-end font-bold text-lg">
+                Cash Out
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View className="flex-1 justify-end ">
+        <View className="bg-white">
+          <Image
+            source={require('./images/scan.png')}
+            className="w-[26px] h-[26px]"></Image>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});
-
-export default UselessTextInput;
+export default App;

@@ -1,35 +1,19 @@
-import React from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+// import React from "react";
+// import { SafeAreaView, View, Text, Section } from "react-native";
 
-const UselessTextInput = () => {
-  const [text, onChangeText] = React.useState("Useless Text");
-  const [number, onChangeNumber] = React.useState(null);
+// const UselessTextInput = () => {
 
-  return (
-    <SafeAreaView>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
-        placeholder="useless placeholder"
-        keyboardType="numeric"
-      />
-    </SafeAreaView>
-  );
-};
+//   return (
+//     <SafeAreaView>
+//        <View className="bg-white dark:bg-black">
+//        <Section title="Step One">
+//           Edit <Text className="font-bold">App.js</Text> to change this
+//             screen and then come back to see your edits.
+//           </Section>
+//         </View>
+//     </SafeAreaView>
+//   );
+// };
 
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});
 
-export default UselessTextInput;
+// export default UselessTextInput;
