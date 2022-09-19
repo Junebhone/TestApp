@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, SafeAreaView} from 'react-native';
 import Card from './components/Card';
 
 const DATA = [
@@ -39,9 +39,10 @@ const otherFunctions = [
 ];
 
 const App = () => {
-  const renderItem = ({item}) => <Card title={item.title} image={item.image} />;
   return (
     <View className="flex-1 bg-[#F3F5FF] ">
+      <SafeAreaView className="bg-[#F3F5ff]"></SafeAreaView>
+      <SafeAreaView className="bg-white"></SafeAreaView>
       <View className="flex  flex-row justify-between p-[16px]">
         <View className="flex flex-row">
           <Image
@@ -58,7 +59,7 @@ const App = () => {
             className="w-4 h-4"></Image>
         </View>
       </View>
-      <ScrollView contentContainerStyle={{flexGrow: 1}}>
+      <ScrollView className="flex-grow">
         <View className="mx-4 gap-y-2">
           <View className="bg-white rounded-md divide-y divide-gray-100">
             <View className="px-4 py-2 flex flex-col gap-2">
@@ -106,7 +107,7 @@ const App = () => {
             })}
           </View>
         </View>
-        <View className="mx-[16px]">
+        <View className="mx-[16px] mb-5">
           <Text className="font-bold text-xl mb-4">News</Text>
           <View className="flex flex-row bg-white rounded-md justify-center items-center px-4 py-2 gap-2">
             <View className="">
@@ -123,43 +124,39 @@ const App = () => {
             </View>
           </View>
         </View>
-        <View style={{height: 100, backgroundColor: 'red'}}></View>
       </ScrollView>
-      <View className="flex-1 flex-row justify-center items-center gap-x-10 bg-white">
-        <View className="flex flex-col">
-          <View>
-            <Image
-              source={require('./images/scan.png')}
-              className="w-[26px] h-[26px]"></Image>
-            <Text>Scan</Text>
-          </View>
+      <View className="flex-1 flex-row justify-center  items-center gap-x-12 p-5 bg-white">
+        <View className="flex flex-col  items-center">
+          <Image
+            resizeMode="contain"
+            source={require('./images/scan.png')}
+            className="w-[26px] h-[26px]"></Image>
+          <Text>Scan</Text>
         </View>
-        <View className="flex flex-col">
-          <View>
-            <Image
-              source={require('./images/qr.png')}
-              className="w-[26px] h-[26px]"></Image>
-            <Text>Scan</Text>
-          </View>
+        <View className="flex flex-col  items-center ">
+          <Image
+            resizeMode="contain"
+            source={require('./images/qr.png')}
+            className="w-[26px] h-[26px]"></Image>
+          <Text>QR</Text>
         </View>
-        <View className="flex flex-col">
-          <View>
-            <Image
-              source={require('./images/topUp.png')}
-              className="w-[26px] h-[26px]"></Image>
-            <Text>Scan</Text>
-          </View>
+        <View className="flex flex-col  items-center ">
+          <Image
+            resizeMode="contain"
+            source={require('./images/topUp.png')}
+            className="w-[26px] h-[26px]"></Image>
+          <Text>Top</Text>
         </View>
-        <View className="flex flex-col">
-          <View>
-            <Image
-              source={require('./images/menu.png')}
-              className="w-[27px] h-[16px]"></Image>
-            <Text>Scan</Text>
-          </View>
+        <View className="flex flex-col  items-center ">
+          <Image
+            resizeMode="contain"
+            source={require('./images/menu.png')}
+            className="w-[26px] h-[26px]"></Image>
+          <Text>Scan</Text>
         </View>
       </View>
     </View>
+    // </SafeAreaView>
   );
 };
 
